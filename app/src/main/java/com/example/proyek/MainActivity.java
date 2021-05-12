@@ -12,11 +12,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.proyek.admin.AdminActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -74,9 +79,29 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
-                            Intent a = new Intent(MainActivity.this, Home.class);
-                            a.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(a);
+                            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+                            databaseReference.child("Login").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    if (snapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("as").getValue(String.class).equals("admin")){
+
+                                        Intent b = new Intent(MainActivity.this, AdminActivity.class);
+                                        b.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(b);
+
+                                    }else if(snapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("as").getValue(String.class).equals("user")){
+                                        Intent a = new Intent(MainActivity.this, Home.class);
+                                        a.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                        startActivity(a);
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+
                         }else {
                             Toast.makeText(MainActivity.this, "failed to login", Toast.LENGTH_LONG).show();
                         }
@@ -86,13 +111,33 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user != null){
-            startActivity(new Intent(MainActivity.this, Home.class));
-            finish();
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        FirebaseUser user = mAuth.getCurrentUser();
+////        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+//
+//        if (user != null){
+//            startActivity(new Intent(MainActivity.this, Home.class));
+//            finish();
+////            databaseReference.child("Login").addListenerForSingleValueEvent(new ValueEventListener() {
+////                @Override
+////                public void onDataChange(@NonNull DataSnapshot snapshot) {
+////                    if (snapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("as").getValue(String.class).equals("admin")){
+////                        startActivity(new Intent(MainActivity.this, AdminActivity.class));
+////                        finish();
+////                    }else {
+////
+////                    }
+////                }
+////
+////                @Override
+////                public void onCancelled(@NonNull DatabaseError error) {
+////
+////                }
+////            });
+//
+//
+//        }
+//    }
 }

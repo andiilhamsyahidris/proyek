@@ -1,5 +1,7 @@
 package com.example.proyek;
 
+import com.example.proyek.settergetter.RvItemSetGet2;
+
 import java.util.ArrayList;
 
 public class RvItem2 {

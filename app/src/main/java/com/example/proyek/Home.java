@@ -8,7 +8,11 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 
-import com.google.android.material.bottomnavigation.BottomNavigationItemView;
+import com.example.proyek.fragments.FragmentFav;
+import com.example.proyek.fragments.FragmentHistory;
+import com.example.proyek.fragments.FragmentHome;
+import com.example.proyek.fragments.FragmentInbox;
+import com.example.proyek.fragments.FragmentProfile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 

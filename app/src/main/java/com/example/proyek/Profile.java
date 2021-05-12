@@ -50,17 +50,13 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference.child("Login").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User userProfile = snapshot.getValue(User.class);
-                if (userProfile != null){
-                    String fullName = userProfile.fullName;
-                    String email = userProfile.email;
+                String name = snapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("email").getValue(String.class);
+                textViewEmail.setText(name);
+//                textViewName.setText(fullName);
 
-                    textViewEmail.setText(email);
-                    textViewName.setText(fullName);
-                }
             }
 
             @Override
