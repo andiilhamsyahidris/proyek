@@ -17,13 +17,13 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window w = getWindow();
-            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            Window window = getWindow();
+            window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
                     WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
 
         new Handler().postDelayed(() -> {
-            Intent mainActivity = new Intent(SplashScreenActivity.this, MainActivity.class);
+            Intent mainActivity = new Intent(SplashScreenActivity.this, Register.class);
             startActivity(mainActivity);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();

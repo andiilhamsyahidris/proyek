@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyek"
         tools:ignore="AllowBackup">
-        <activity android:name=".SplashScreenActivity">
+
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/Theme.Proyek.TransparentStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,13 +24,34 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".GetStartedActivity"
+            android:theme="@style/Theme.Proyek.TransparentStatusBar" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.Proyek.TransparentStatusBar"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name=".Register"
+            android:theme="@style/Theme.Proyek.TransparentStatusBar"
+            android:windowSoftInputMode="adjustPan" />
+
         <activity android:name=".admin.AdminActivity" />
+
         <activity android:name=".AfterClickMenu" />
+
         <activity android:name=".Detail" />
+
         <activity android:name=".Home" />
+
         <activity android:name=".Profile" />
-        <activity android:name=".Register" />
-        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
