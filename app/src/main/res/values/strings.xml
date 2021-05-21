@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">proyek</string>
+    <string name="get_started_sub_title">Aplikasi pemesanan makanan sehat. Kami siap melayani anda.</string>
+    <string name="masuk">Masuk</string>
+    <string name="buat_akun_baru">Buat Akun Baru</string>
+    <string name="selamat_datang">Selamat Datang!</string>
+    <string name="username_atau_email">Username atau Email</string>
+    <string name="password">Password</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="daftar_sekarang">Daftar Sekarang</string>
+    <string name="atau">Atau</string>
+    <string name="masuk_dengan_akun_google">Masuk dengan akun Google</string>
+    <string name="buat_akun_baru_anda">Buat Akun Baru Anda</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="buat_akun">Buat Akun</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="masuk_sekarang">Masuk Sekarang</string>
+    <string name="phone_number">Phone Number</string>
 </resources>
