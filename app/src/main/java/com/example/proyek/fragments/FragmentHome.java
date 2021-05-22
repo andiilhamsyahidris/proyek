@@ -69,7 +69,7 @@ public class FragmentHome extends Fragment {
         });
     }
 
-    public void showRecycleList(){
+    public void showRecycleList() {
         list.addAll(RvItem.getListData());
         rvListMenu.setLayoutManager(new LinearLayoutManager((getActivity())));
         recycleViewLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
@@ -90,6 +90,4 @@ public class FragmentHome extends Fragment {
 
         });
     }
-
-
 }

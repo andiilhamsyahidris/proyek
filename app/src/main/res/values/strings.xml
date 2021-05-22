@@ -17,4 +17,19 @@
     <string name="sudah_punya_akun">Sudah punya akun?</string>
     <string name="masuk_sekarang">Masuk Sekarang</string>
     <string name="phone_number">Phone Number</string>
+    <string name="beranda">Beranda</string>
+    <string name="history">Pesanan</string>
+    <string name="favorit">Favorit</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="profile">Profile</string>
+    <string name="keranjang_kamu_masih_kosong">Keranjang Kamu Masih Kosong</string>
+    <string name="tunggu_apa_lagi">Tunggu Apa lagi, Buruan beli produk kesukaanmu dan kembali ke sini.</string>
+    <string name="riwayat_pesanan_masih_kosong">Riwayat Pesanan Masih Kosong</string>
+    <string name="produk_yang_telah">Produk yang telah anda pesan nantinya akan muncul di sini.</string>
+    <string name="favorites_masih_kosong">Favorites Masih Kosong</string>
+    <string name="produk_yang_anda_sukai">Tekan gambar hati pada produk yang anda sukai dan kami akan menaruhnya di sini.</string>
+    <string name="notifikasi_masih_kosong">Notifikasi Masih Kosong</string>
+    <string name="jangan_lupa_untuk">Jangan lupa untuk selalu mengecek update terbaru kami ya.</string>
+    <string name="lihat_detail">Lihat Detail</string>
+    <string name="pesan_lagi">Pesan Lagi</string>
 </resources>
