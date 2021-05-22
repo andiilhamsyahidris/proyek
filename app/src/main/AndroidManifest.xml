@@ -15,26 +15,33 @@
         tools:ignore="AllowBackup">
 
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activities.SplashScreenActivity"
             android:theme="@style/Theme.Proyek.TransparentStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".GetStartedActivity"
-            android:theme="@style/Theme.Proyek.TransparentStatusBar" />
+            android:name=".activities.GetStartedActivity"
+            android:theme="@style/Theme.Proyek.TransparentStatusBar">
+        </activity>
+
+        <activity android:name=".activities.HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".auth.SignInActivity"
             android:theme="@style/Theme.Proyek.TransparentStatusBar"
             android:windowSoftInputMode="adjustPan" />
 
         <activity
-            android:name=".Register"
+            android:name=".auth.SignUpActivity"
             android:theme="@style/Theme.Proyek.TransparentStatusBar"
             android:windowSoftInputMode="adjustPan" />
 
@@ -42,11 +49,10 @@
 
         <activity android:name=".AfterClickMenu" />
 
-        <activity android:name=".Detail" />
+        <activity android:name=".activities.DetailActivity" />
 
-        <activity android:name=".Home" />
 
-        <activity android:name=".Profile" />
+        <activity android:name=".activities.ProfileActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

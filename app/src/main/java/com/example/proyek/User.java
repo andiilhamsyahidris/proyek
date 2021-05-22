@@ -1,15 +1,12 @@
 package com.example.proyek;
 
 public class User {
-    public  String fullName, email, as;
+    public  String username, email, phoneNumber, as;
 
-    public User(){
-
-    }
-
-    public  User(String fullName, String email, String as){
-        this.fullName = fullName;
+    public  User(String username, String email, String phoneNumber, String as){
+        this.username = username;
         this.email = email;
+        this.phoneNumber = phoneNumber;
         this.as = as;
     }
 }

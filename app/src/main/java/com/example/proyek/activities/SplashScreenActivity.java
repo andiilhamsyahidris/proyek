@@ -1,4 +1,4 @@
-package com.example.proyek;
+package com.example.proyek.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.example.proyek.R;
+import com.example.proyek.auth.SignUpActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -23,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         }
 
         new Handler().postDelayed(() -> {
-            Intent mainActivity = new Intent(SplashScreenActivity.this, Home.class);
+            Intent mainActivity = new Intent(SplashScreenActivity.this, HomeActivity.class);
             startActivity(mainActivity);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
