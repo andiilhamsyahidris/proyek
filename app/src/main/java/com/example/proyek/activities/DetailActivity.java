@@ -1,4 +1,4 @@
-package com.example.proyek;
+package com.example.proyek.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Detail extends AppCompatActivity implements View.OnClickListener {
+import com.example.proyek.R;
+
+public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView photo, btnTambah, btnKurang;
     TextView tvName, tvHarga;

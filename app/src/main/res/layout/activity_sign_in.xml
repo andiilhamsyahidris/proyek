@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dividerColor"
-    tools:context=".Register">
+    tools:context=".auth.SignInActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
             android:id="@+id/imageView"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_sign_up"
+            android:src="@drawable/ic_sign_in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_sans_semibold"
-            android:text="@string/buat_akun_baru_anda"
+            android:text="@string/selamat_datang"
             android:textColor="@color/primaryGrey"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,13 +70,13 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tfUsername"
+            android:id="@+id/tfUsernameorEmail"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
-            android:hint="@string/username"
+            android:hint="@string/username_atau_email"
             app:errorEnabled="false"
             app:errorIconDrawable="@null"
             app:helperTextTextColor="@color/design_default_color_error"
@@ -85,39 +85,11 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTitle">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etUsername"
+                android:id="@+id/etUsernameorEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/custom_person_icon"
                 android:drawableLeft="@drawable/custom_person_icon"
-                android:drawablePadding="8dp"
-                android:fontFamily="@font/nunito_sans_semibold"
-                android:inputType="text"
-                android:textColor="@color/primaryGrey" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tfEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/email"
-            app:errorEnabled="false"
-            app:errorIconDrawable="@null"
-            app:helperTextTextColor="@color/design_default_color_error"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tfUsername">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/custom_email_icon"
-                android:drawableLeft="@drawable/custom_email_icon"
                 android:drawablePadding="8dp"
                 android:fontFamily="@font/nunito_sans_semibold"
                 android:inputType="textEmailAddress"
@@ -139,7 +111,7 @@
             app:helperTextTextColor="@color/design_default_color_error"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tfEmail">
+            app:layout_constraintTop_toBottomOf="@+id/tfUsernameorEmail">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
@@ -154,38 +126,8 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tfPhone"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="12dp"
-            android:hint="@string/phone_number"
-            app:errorEnabled="false"
-            app:errorIconDrawable="@null"
-            app:helperTextTextColor="@color/design_default_color_error"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tfPassword">
-
-            <com.santalu.maskara.widget.MaskEditText
-                android:id="@+id/etPhone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/custom_phone_icon"
-                android:drawableLeft="@drawable/custom_phone_icon"
-                android:drawablePadding="8dp"
-                android:fontFamily="@font/nunito_sans_semibold"
-                android:inputType="number"
-                android:maxLength="20"
-                android:textColor="@color/black"
-                app:mask="+62 (___) ___ __ ___" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSignUp"
+            android:id="@+id/btnSignIn"
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -193,14 +135,48 @@
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_sans_bold"
             android:padding="8dp"
-            android:text="@string/buat_akun"
+            android:text="@string/masuk"
             android:textAllCaps="false"
-            android:textColor="@color/black"
             android:textSize="16sp"
-            app:backgroundTint="@color/secondaryColor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tfPhone" />
+            app:layout_constraintTop_toBottomOf="@+id/tfPassword" />
+
+        <TextView
+            android:id="@+id/divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/nunito_sans_semibold"
+            android:text="@string/atau"
+            android:textColor="@color/primaryGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSignIn" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignInWithGoogle"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:padding="8dp"
+            android:text="@string/masuk_dengan_akun_google"
+            android:textAllCaps="false"
+            android:textColor="@color/secondaryColor"
+            android:textSize="16sp"
+            app:icon="@drawable/ic_grommet_icons_google"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:rippleColor="@color/lightSecondaryColor"
+            app:strokeColor="@color/secondaryColor" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -209,13 +185,13 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnSignUp">
+            app:layout_constraintTop_toBottomOf="@id/btnSignInWithGoogle">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_sans_semibold"
-                android:text="@string/sudah_punya_akun"
+                android:text="@string/belum_punya_akun"
                 android:textColor="@color/primaryGrey"
                 android:textSize="16sp" />
 
@@ -228,7 +204,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_sans_bold"
-                android:text="@string/masuk_sekarang"
+                android:text="@string/daftar_sekarang"
                 android:textColor="@color/primaryColor"
                 android:textSize="16sp" />
 

@@ -1,6 +1,5 @@
 package com.example.proyek.admin;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -12,17 +11,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.proyek.MainActivity;
+import com.example.proyek.auth.SignInActivity;
 import com.example.proyek.R;
 import com.example.proyek.adapter.RecyclerAdapter;
 import com.example.proyek.settergetter.Sayur;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -55,7 +51,7 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
-                startActivity(new Intent(AdminActivity.this, MainActivity.class));
+                startActivity(new Intent(AdminActivity.this, SignInActivity.class));
                 finish();
             }
         });
