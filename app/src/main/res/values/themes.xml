@@ -12,11 +12,12 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowAnimationStyle">@style/DialogBoxAnimation</item>
     </style>
 
     <style name="Theme.Proyek.TransparentStatusBar">
         <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
-<!--        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>-->
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
     </style>
 
     <style name="Widget.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.PrimarySurface">
@@ -26,6 +27,11 @@
     <style name="NunitoSansTextAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:fontFamily">@font/nunito_sans_bold</item>
         <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="DialogBoxAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
 </resources>
