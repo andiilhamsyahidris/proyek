@@ -46,4 +46,15 @@
     <string name="memulai_keranjang_baru">Memulai Keranjang Baru?</string>
     <string name="keranjang_sebelumnya_akan">Keranjang sebelumnya akan dihapus jika kamu menambah pesanan ini. Tetap lanjutkan?</string>
     <string name="lanjut">Lanjut</string>
+    <string name="pesanan">Pesanan</string>
+    <string name="favorite">Favorit</string>
+    <string name="the_vegbox_v1_0">The VegBox V1.0</string>
+    <string name="empty">‏‏‎ ‎</string>
+    <string name="manage_account">Manage Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="ubah">Ubah</string>
+    <string name="ganti_password">Ganti Password</string>
+    <string name="password_baru">Password Baru</string>
 </resources>
