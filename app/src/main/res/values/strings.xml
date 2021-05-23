@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TheVegBox</string>
+    <string name="app_name">proyek</string>
     <string name="get_started_sub_title">Aplikasi pemesanan makanan sehat. Kami siap melayani anda.</string>
     <string name="masuk">Masuk</string>
     <string name="buat_akun_baru">Buat Akun Baru</string>
@@ -12,7 +12,7 @@
     <string name="masuk_dengan_akun_google">Masuk dengan akun Google</string>
     <string name="buat_akun_baru_anda">Buat Akun Baru Anda</string>
     <string name="username">Username</string>
-    <string name="email">Email</string>
+    <string name="email">Email Address</string>
     <string name="buat_akun">Buat Akun</string>
     <string name="sudah_punya_akun">Sudah punya akun?</string>
     <string name="masuk_sekarang">Masuk Sekarang</string>
@@ -32,4 +32,18 @@
     <string name="jangan_lupa_untuk">Jangan lupa untuk selalu mengecek update terbaru kami ya.</string>
     <string name="lihat_detail">Lihat Detail</string>
     <string name="pesan_lagi">Pesan Lagi</string>
+    <string name="lupa_password">Forgot Password?</string>
+    <string name="dot">•</string>
+    <string name="lupa_password_jangan">Enter the email address you used when you joined and we’ll send you instructions to reset your password.</string>
+    <string name="send_reset_instructions">Send Reset Instructions</string>
+    <string name="confirm_sign_out">Confirm Sign Out</string>
+    <string name="anda_yakin_ingin_keluar">Anda yakin ingin keluar?</string>
+    <string name="kembali">Kembali</string>
+    <string name="keluar">Keluar</string>
+    <string name="konfirmasi_pemesanan">Konfirmasi Pemesanan</string>
+    <string name="apakah_anda_yakin">Apakah anda yakin akan memesan produk ini? Produk yang dipesan tidak dapat dikembalikan.</string>
+    <string name="pesan">Pesan</string>
+    <string name="memulai_keranjang_baru">Memulai Keranjang Baru?</string>
+    <string name="keranjang_sebelumnya_akan">Keranjang sebelumnya akan dihapus jika kamu menambah pesanan ini. Tetap lanjutkan?</string>
+    <string name="lanjut">Lanjut</string>
 </resources>
