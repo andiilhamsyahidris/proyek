@@ -17,10 +17,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Favorit"
-        app:titleTextAppearance="@style/NunitoSansTextAppearance"
-        app:titleTextColor="@color/primaryColor"
-        tools:targetApi="lollipop" />
+        tools:targetApi="lollipop">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            style="@style/ToolbarTitleAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/favorite" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabCart"

@@ -9,6 +9,7 @@
         <item name="colorSecondary">@color/secondaryColor</item>
         <item name="colorSecondaryVariant">@color/secondaryColor</item>
         <item name="colorOnSecondary">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <item name="android:windowActionBarOverlay">true</item>
@@ -24,9 +25,10 @@
         <item name="android:fontFamily">@font/nunito_sans</item>
     </style>
 
-    <style name="NunitoSansTextAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+    <style name="ToolbarTitleAppearance" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:fontFamily">@font/nunito_sans_bold</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/primaryColor</item>
     </style>
 
     <style name="DialogBoxAnimation">
