@@ -13,4 +13,5 @@
     <color name="dividerColor">#f5f5f5</color>
     <color name="lineColor">#1A000000</color>
     <color name="blue">#01A1D5</color>
+    <color name="red">#F40E0E</color>
 </resources>

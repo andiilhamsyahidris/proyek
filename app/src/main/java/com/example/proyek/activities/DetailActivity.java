@@ -1,33 +1,46 @@
 package com.example.proyek.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.proyek.R;
 
-public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
+import java.util.Objects;
 
-    private ImageView photo, btnTambah, btnKurang;
-    TextView tvName, tvHarga;
-    int harga = 0;
+public class DetailActivity extends AppCompatActivity {
+
+//    private ImageView photo, btnTambah, btnKurang;
+//    TextView tvName, tvHarga;
+//    int harga = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        tvName = findViewById(R.id.tvJudul);
-        tvHarga = findViewById(R.id.tvHarga);
-        photo = findViewById(R.id.photo);
-        btnTambah = findViewById(R.id.btnTambahItem);
-        btnKurang = findViewById(R.id.btnKurangItem);
+        Toolbar tbDetail = findViewById(R.id.tbDetail);
+        setSupportActionBar(tbDetail);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
-        btnTambah.setOnClickListener(this);
-        btnKurang.setOnClickListener(this);
+//        tvName = findViewById(R.id.tvJudul);
+//        tvHarga = findViewById(R.id.tvHarga);
+//        photo = findViewById(R.id.photo);
+//        btnTambah = findViewById(R.id.btnTambahItem);
+//        btnKurang = findViewById(R.id.btnKurangItem);
+//
+//        btnTambah.setOnClickListener(this);
+//        btnKurang.setOnClickListener(this);
 
 //        VegetablesSetGet vegetablesSetGet = getIntent().getParcelableExtra("vegetables_data");
 //        SeasoningSetGet seasoningSetGet = getIntent().getParcelableExtra("seasoning_data");
@@ -37,7 +50,6 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 //            tvName.setText(vegetablesSetGet.getName());
 //            harga = vegetablesSetGet.getHarga();
 //            tvHarga.setText(String.valueOf(harga));
-//
 //            photo.setImageResource(vegetablesSetGet.getPhoto());
 //        }else if (fruitsSetGet != null){
 //            tvName.setText(fruitsSetGet.getName());
@@ -45,18 +57,39 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
 //            tvHarga.setText(String.valueOf(harga));
 //            photo.setImageResource(fruitsSetGet.getPhoto());
 //        }
-
-
     }
 
+//    @Override
+//    public void onClick(View view) {
+//        switch (view.getId()) {
+//            case R.id.btnKurangItem:
+//
+//            case R.id.btnTambahItem:
+//
+//        }
+//    }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.btnKurangItem:
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) finish();
+        // else if (item.getItemId() == R.id.addToFav) {Do something here!}
+        return true;
+    }
 
-            case R.id.btnTambahItem:
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.detail_menu, menu);
 
+        for (int i = 0; i < menu.size(); i++) {
+            Drawable drawable = menu.getItem(i).getIcon();
+
+            if (drawable != null) {
+                drawable.mutate();
+                drawable.setColorFilter(getResources()
+                        .getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
+            }
         }
+
+        return true;
     }
 }

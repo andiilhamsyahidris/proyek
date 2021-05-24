@@ -39,8 +39,9 @@
                 android:id="@+id/ivPosterProfile"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/seasoning"
+                android:src="@drawable/salad"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ContentDescription" />
@@ -49,6 +50,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/profile_image_gradient"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/profile_image_gradient_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
