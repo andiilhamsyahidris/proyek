@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyek.R;
+import com.example.proyek.User;
 import com.example.proyek.activities.GetStartedActivity;
 import com.example.proyek.activities.HomeActivity;
 import com.example.proyek.admin.AdminActivity;
@@ -39,7 +40,7 @@ public class SignInActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private TextInputEditText etUsernameOrEmail, etPassword;
     private Button btnSignIn, btnGoogleSignIn;
-    private TextView tvSignUp;
+    private TextView tvSignUp, tvForgotPass;
     private GoogleSignInClient mGoogleSignInClient;
 
     private static final int RC_SIGN_IN = 123;
@@ -56,6 +57,7 @@ public class SignInActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
         btnGoogleSignIn = findViewById(R.id.btnSignInWithGoogle);
         tvSignUp = findViewById(R.id.tvSignUp);
+        tvForgotPass = findViewById(R.id.tvForgotPassword);
 
         createRequest();
 
@@ -127,6 +129,14 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signIn();
+            }
+        });
+
+        tvForgotPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignInActivity.this, ForgotPasswordActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -201,11 +211,28 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-                            startActivity(intent);
+                            // Sign in success, update UI with the signed-in user's information
+                            FirebaseUser mUser = mAuth.getCurrentUser();
+//                            GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(SignInActivity.this);
+//                            String username = googleSignInAccount.getDisplayName().toString();
+//                            String email = googleSignInAccount.getEmail().toString();
+//                            String phone = "";
+                            String role = "user";
+
+                            String username = mUser.getDisplayName();
+                            String email = mUser.getEmail();
+                            String phone = mUser.getPhoneNumber();
+                            User user = new User(username, email, phone, role);
+
+                            FirebaseDatabase.getInstance().getReference("Login").child(FirebaseAuth.getInstance().getCurrentUser()
+                                    .getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
+                                    startActivity(intent);
+                                }
+                            });
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(SignInActivity.this, "Telah terjadi kesalahan, mohon coba ulang", Toast.LENGTH_SHORT).show();
