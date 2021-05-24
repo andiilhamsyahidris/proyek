@@ -102,7 +102,7 @@
                 android:drawablePadding="4dp"
                 android:fontFamily="@font/nunito_sans"
                 android:textColor="@color/primaryGrey"
-                app:drawableStartCompat="@drawable/ic_outline_shopping_cart_24"
+                app:drawableStartCompat="@drawable/ic_outline_shopping_cart_18"
                 app:drawableTint="@color/primaryGrey"
                 tools:text="3rb" />
 
@@ -119,7 +119,7 @@
                 android:drawablePadding="4dp"
                 android:fontFamily="@font/nunito_sans"
                 android:textColor="@color/primaryGrey"
-                app:drawableStartCompat="@drawable/ic_outline_delivery_dining_24"
+                app:drawableStartCompat="@drawable/ic_outline_delivery_dining_18"
                 app:drawableTint="@color/primaryGrey"
                 tools:text="Rp7.000" />
 
@@ -137,7 +137,7 @@
             android:fontFamily="@font/nunito_sans"
             android:maxLines="1"
             android:textColor="@color/primaryGrey"
-            app:drawableStartCompat="@drawable/ic_outline_place_24"
+            app:drawableStartCompat="@drawable/ic_outline_place_18"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cvPosterFav"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout"

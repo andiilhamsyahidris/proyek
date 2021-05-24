@@ -64,7 +64,7 @@
             android:maxLines="1"
             android:textColor="@color/primaryGrey"
             android:textSize="12sp"
-            app:drawableStartCompat="@drawable/ic_outline_place_24"
+            app:drawableStartCompat="@drawable/ic_outline_place_18"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/cvPosterHistory"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleHistory"
