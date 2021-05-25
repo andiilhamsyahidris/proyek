@@ -1,10 +1,13 @@
 package com.example.proyek.fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +29,7 @@ import java.util.ArrayList;
 public class FragmentHome extends Fragment {
     View view;
 
+    private SearchView searchView;
     private RecyclerView rvListMenu, rvListMenu2;
     private ArrayList<RvItemSetGet> list = new ArrayList<>();
     private ArrayList<RvItemSetGet2> list2 = new ArrayList<>();
@@ -41,6 +45,10 @@ public class FragmentHome extends Fragment {
         rvListMenu2 = view.findViewById(R.id.rvitem2);
         rvListMenu.setHasFixedSize(true);
 
+        // Custom Hint Color in Searchview
+        TextView searchHint = searchView.findViewById(R.id.svHome);
+        searchHint.setHint("Hari ini kamu mau beli apa?");
+        searchHint.setHintTextColor(Color.BLACK);
 
         showRecycleList();
         showRecycleList2();
